@@ -7,10 +7,14 @@ from core.views import(
     thanks,
     order_detail,
 )
+from django.conf import settings
+from django.conf.urls.static import static
+
 urlpatterns = [
+    path("index/", index, name="index"),
     path('admin/', admin.site.urls),
-    path('', views.landing, name='landing'),
-    path('thanks/', views.thanks, name='thanks'),
-    path('orders/', views.orders_list, name='orders_list'),
-    path('orders/<int:order_id>/', views.order_detail, name='order_detail')
-]
+    path('', landing, name='landing'),
+    path('thanks/', thanks, name='thanks'),
+    path('orders/', orders_list, name='orders_list'),
+    path('order/<int:order_id>/', order_detail, name='order_detail')
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
