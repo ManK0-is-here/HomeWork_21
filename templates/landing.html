@@ -1,0 +1,22 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{% static 'images/favicon.webp' %}" type="image/x-icon">
+
+    {% comment %} <link rel="stylesheet" type="text/css" href="{% static 'main.css' %}"> {% endcomment %}
+    <script src="{% static 'main.js' %}"></script>
+    <title>pls i need more coffee</title>
+</head>
+<body>
+    <h2>КВА</h2>
+    <footer class="container mt-5 py-4 text-center border-top">
+        {% block footer %}
+            <p>Учебный проект python411</p>
+            <p>2025 &copy; У вас нет прав</p>
+        {% endblock footer %}
+    </footer>
+</body>
+</html>
